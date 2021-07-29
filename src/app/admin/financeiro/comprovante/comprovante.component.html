@@ -1,0 +1,25 @@
+<p>comprovante works!</p>
+
+<p>
+    <span>ID do comprovante: {{idComprovante}}</span>
+</p>
+
+<div>
+    <label>{{'Data do comprovante:' | uppercase }}</label>
+    <input
+        class='input-data'
+        type="text"
+        placeholder="Insira a data"
+        [(ngModel)]="dataSelecionada"
+        appTransformarData
+    />
+</div>
+
+<p *ngIf="dataSelecionada">
+    <label>Data selecionada:</label>
+    {{dataSelecionada}}
+</p>
+
+<p *ngFor="let data of datasPagamento">
+    {{data | date:'dd/MM/yyyy HH:mm':'+0' }}
+</p>
